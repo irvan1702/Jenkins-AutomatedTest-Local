@@ -1,6 +1,6 @@
 node('master'){
 
         stage('build artifact'){
-               echo "mvn --version";
+               call "mvn --version";
         }
 }
