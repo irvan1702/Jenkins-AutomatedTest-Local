@@ -1,6 +1,10 @@
 node('master'){
 
-    stage('build artifact'){
-        sh 'mvn --version';
+    stages{
+        stage('build artifact'){
+            step{
+                sh 'mvn --version';
+            }
+        }
     }
 }
