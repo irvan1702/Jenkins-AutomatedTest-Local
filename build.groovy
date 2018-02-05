@@ -1,7 +1,10 @@
 node('master'){
 
+        stage('download source code'){
+                git clone https://$USERNAME:$PASSWORD@github.com/irvan1702/Jenkins-AutomatedTest-Local.git
+        }
+        
         stage('build artifact'){
-               cd "C:/17054012/Data/List Project FES/Testing/webdriver"
                bat "mvn clean install";
         }
 }
