@@ -1,6 +1,12 @@
 node('master'){
 
         stage('download source code'){
+            def dirExists = fileExists 'Jenkins-AutomatedTest-Local';
+                        
+                if (dirExists) {
+                    bat "rm -rf 'Jenkins-AutomatedTest-Local'" ;
+                }
+            
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GIT_CRED', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]){
                bat "git clone https://$USERNAME:$PASSWORD@github.com/irvan1702/Jenkins-AutomatedTest-Local.git"
             }
