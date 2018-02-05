@@ -4,7 +4,7 @@ node('master'){
             def dirExists = fileExists 'Jenkins-AutomatedTest-Local';
                         
                 if (dirExists) {
-                    bat "rm -rf 'Jenkins-AutomatedTest-Local'" ;
+                    bat "rmdir 'Jenkins-AutomatedTest-Local'" ;
                 }
             
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GIT_CRED', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]){
