@@ -2,7 +2,7 @@ node('master'){
 
         stage('download source code'){
             def dirExists = fileExists 'Jenkins-AutomatedTest-Local';
-                        
+                bat "cd"                      
                 if (dirExists) {
                     bat "rmdir /s /q 'Jenkins-AutomatedTest-Local'" ;
                 }
